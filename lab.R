@@ -9,46 +9,52 @@
 ## Use an appropriate variable name for the scores
 ## 
 ## Hint: feel free to invent if you cannot figure this out
-
+seahawks_scores <- c(17, 7, 23, 48, 32)
 
 ## Create a vector of the number of points the opponent
 ## scored against Seahawks in the first 5 games
 ## use an appropriate variable name
-
+opponent_scores <- c(16, 27, 27, 45, 39)
 
 ## Combine your two vectors into a dataframe
-
+game_scores <- data.frame(seahawks_scores, opponent_scores)
 
 ## Create a new column "diff" that is the difference in points
 ## (in favor of Hawks)
-
+game_scores$diff <- seahawks_scores - opponent_scores
+game_scores
 
 ## Create a new column "won" which is TRUE if the Seahawks won,
 ## ie if Seahawks scored more than the opponent scored against them
-
+game_scores$won <- game_scores$diff > 0
+game_scores
 
 ## Create a vector of the opponents name (such as "Denver Broncos")
+opponent_names <- c("Denver Broncos", "San Francisco 49ers", "Atlanta Falcons", "Detroit Lions", "New Orleans Saints")
 
 
 ## Add the vector of opponents into the data frame
-
+game_scores$opponent_names <- opponent_names
+game_scores
 
 ## Compute the average score of Seahawks
-
+savg <- mean(seahawks_scores)
+savg
 
 ## Compute how many games did Seahawks won
 ## (use the 'won' variable to compute it)
+sum(game_scores$won)
 
 
 ## What was the largest difference in scores (in favor of Seahawks)?
-
+max(game_scores$diff)
 
 ## How many different opponents did Seahawks have in these games?
 ## Hint: use `unique()` and `length()`
-
+unique(length(game_scores$opponent_names))
 
 ## Print the variable names in your data frame
-
+names(game_scores)
 
 ## Write a loop over all variables in your data frame
 ## print the variable name inside the loop
@@ -59,6 +65,15 @@
 ## and true/false, depending if the variable is numeric
 ## check out 'is.numeric()'
 
+# is.numeric(results[[col]])
+# for(col in names(results)){
+#   
+# if(is.numeric(results[[col]])){
+#   cat(col, mean(results[[col]]), "\n")
+#   
+# }
+# 
+# }
 
 ## Write a loop over all variables in your data frame
 ## print the variable name inside the loop,
