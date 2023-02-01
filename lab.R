@@ -1,6 +1,6 @@
 ### -------------------- Lab 3 --------------------
 ### This lab is designed to prepare you for PS3
-
+library(stringr)
 ## Create a vector of the number of points the Seahawks scored in the
 ## first (at least) 5 games
 ## Hint: google "Seahawks scores", or check the football database:
@@ -107,7 +107,8 @@ if(is.numeric(game_scores[[i]])){
 ## Create a vector of 100 employees ("Employee 1", "Employee 2", ... "Employee
 ## 100")
 ## Hint: use 'paste()` or `str_c`
-
+employees <- c(str_c("Employee ", 1:100))
+employees
 
 ## Create a random vector of their 2021 salaries.
 ## Hint: you may use the runif function to create uniform random numbers,
