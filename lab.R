@@ -59,11 +59,23 @@ names(game_scores)
 ## Write a loop over all variables in your data frame
 ## print the variable name inside the loop
 
+for( i in names(game_scores)){
+ print(i)
+  
+}
 
 ## Write a loop over all variables in your data frame
 ## print the variable name inside the loop,
 ## and true/false, depending if the variable is numeric
 ## check out 'is.numeric()'
+for(col in names(game_scores)){
+  if(is.numeric(game_scores[[col]])){
+    cat(col, "\n")
+  }
+  
+}
+
+
 
 # is.numeric(results[[col]])
 # for(col in names(results)){
@@ -79,6 +91,12 @@ names(game_scores)
 ## print the variable name inside the loop,
 ## and the average value of the variable
 ## if the variable is numeric
+for(i in names(game_scores)){
+if(is.numeric(game_scores[[i]])){
+  cat(i, mean(game_scores[[i]]), "\n")
+  
+}
+}
 
 
 ##
